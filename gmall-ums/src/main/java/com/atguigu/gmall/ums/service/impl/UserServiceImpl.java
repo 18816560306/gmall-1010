@@ -1,18 +1,16 @@
 package com.atguigu.gmall.ums.service.impl;
 
-import com.atguigu.gmall.ums.entity.UserEntity;
+import com.atguigu.gmall.common.exception.GmallException;
+import com.atguigu.gmall.common.utils.HttpUtils;
+import com.atguigu.gmall.common.utils.ScwAppUtils;
 import com.google.gson.Gson;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.http.HttpResponse;
-import com.atguigu.gmall.common.exception.GmallException;
-import com.atguigu.gmall.common.utils.HttpUtils;
-import com.atguigu.gmall.common.utils.ScwAppUtils;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -29,8 +27,10 @@ import com.atguigu.gmall.common.bean.PageResultVo;
 import com.atguigu.gmall.common.bean.PageParamVo;
 
 import com.atguigu.gmall.ums.mapper.UserMapper;
+import com.atguigu.gmall.ums.entity.UserEntity;
 import com.atguigu.gmall.ums.service.UserService;
 import org.springframework.util.StringUtils;
+
 @Data
 @Slf4j
 @ConfigurationProperties(prefix = "sms")
@@ -55,7 +55,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
 
         return new PageResultVo(page);
     }
-
     @Override
     public Boolean checkData(String data, Integer type) {
         QueryWrapper<UserEntity> wrapper = new QueryWrapper<>();
@@ -220,6 +219,5 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         }
         return flag;
     }
-
 
 }

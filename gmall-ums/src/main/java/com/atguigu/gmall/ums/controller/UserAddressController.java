@@ -2,7 +2,6 @@ package com.atguigu.gmall.ums.controller;
 
 import java.util.List;
 
-import com.atguigu.gmall.ums.entity.UserAddressEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.atguigu.gmall.ums.entity.UserAddressEntity;
 import com.atguigu.gmall.ums.service.UserAddressService;
 import com.atguigu.gmall.common.bean.PageResultVo;
 import com.atguigu.gmall.common.bean.ResponseVo;
@@ -23,7 +24,7 @@ import com.atguigu.gmall.common.bean.PageParamVo;
  *
  * @author dongge
  * @email 517525115@qq.com
- * @date 2020-04-01 22:39:07
+ * @date 2020-04-20 23:51:15
  */
 @Api(tags = "收货地址表 管理")
 @RestController

@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 
  * @author dongge
  * @email 517525115@qq.com
- * @date 2020-04-01 22:39:07
+ * @date 2020-04-20 23:51:15
  */
 @Mapper
 public interface GrowthHistoryMapper extends BaseMapper<GrowthHistoryEntity> {

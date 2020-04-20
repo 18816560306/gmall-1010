@@ -1,0 +1,38 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        port: 8719
+  zipkin:
+    base-url: http://localhost:9941/
+    sender:
+      type: web
+    discovery-client-enabled: false
+  sleuth:
+    sampler:
+      probability: 1
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.186.128:3306/guli_ums
+    username: root
+    password: root1234
+  redis:
+    host: 192.168.186.128
+feign:
+  sentinel:
+    enabled: true
+server:
+  port: 18082
+mybatis-plus:
+  mapper-locations: classpath:mapper/ums/**/*.xml
+  type-aliases-package: com.atguigu.gmall.ums.entity
+  global-config:
+    db-config:
+      id-type: auto
+sms.host: http://yzxyzm.market.alicloudapi.com
+sms.path: /yzx/verifySms
+sms.method: POST
+sms.appcode: d4e646cd64a24abbae57d26c9cd8c615

@@ -1,0 +1,36 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        port: 8719
+  zipkin:
+    base-url: http://localhost:9941/
+    sender:
+      type: web
+    discovery-client-enabled: false
+  sleuth:
+    sampler:
+      probability: 1
+  elasticsearch:
+    rest:
+      uris: 192.168.186.128:9200
+      jackson:
+        default-property-inclusion: non_null
+  rabbitmq:
+    host: 192.168.186.128
+    username: dongge
+    password: dongge
+    virtual-host: /dongge
+    listener:
+      simple:
+        prefetch: 1
+        acknowledge-mode: manual
+feign:
+  sentinel:
+    enabled: true
+server:
+  port: 18086
+

@@ -1,0 +1,39 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        port: 8719
+  zipkin:
+    base-url: http://localhost:9941/
+    sender:
+      type: web
+    discovery-client-enabled: false
+  sleuth:
+    sampler:
+      probability: 1
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.186.128:3306/guli_pms
+    username: root
+    password: root1234
+  redis:
+    host: 192.168.186.128
+  rabbitmq:
+    host: 192.168.186.128
+    username: dongge
+    password: dongge
+    virtual-host: /dongge
+feign:
+  sentinel:
+    enabled: true
+server:
+  port: 18081
+mybatis-plus:
+  mapper-locations: classpath:mapper/pms/**/*.xml
+  type-aliases-package: com.atguigu.gmall.pms.entity
+  global-config:
+    db-config:
+      id-type: auto

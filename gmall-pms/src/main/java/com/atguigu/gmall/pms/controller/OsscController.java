@@ -19,8 +19,8 @@ import java.util.Map;
 public class OsscController {
     @GetMapping("policy")
     public ResponseVo policy(){
-        String accessId = "LTAI4FjAkpHGReVfB8cLx492"; // 请填写您的AccessKeyId。
-        String accessKey = "Cgfo6jOL75KLSKmYDqVRe9zQH7a6b4"; // 请填写您的AccessKeySecret。
+        String accessId = "111111"; // 请填写您的AccessKeyId。
+        String accessKey = "111111"; // 请填写您的AccessKeySecret。
         String endpoint = "oss-cn-beijing.aliyuncs.com"; // 请填写您的 endpoint。
         String bucket = "gmall-10"; // 请填写您的 bucketname 。
         String host = "https://" + bucket + "." + endpoint; // host的格式为 bucketname.endpoint
